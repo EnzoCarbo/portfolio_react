@@ -79,33 +79,38 @@ export default function Landing() {
   // === ABOUT DATA ===
   const aboutItems = [
     {
-      title: "Parcours académique",
+      title: "2019 - Obtention du Bac",
       icon: "🎓",
       color: "border-p5-red",
       bgColor: "bg-p5-red/10",
-      text: "4 ans à Luminy en biochimie avant de me réorienter vers l'informatique et le développement.",
+      text: "Bac scientifique spécialité SVT obtenu avec succès, marquant le début de mon parcours académique.",
+      year: "2019"
     },
     {
-      title: "Formation",
-      icon: "⚡",
+      title: "2019-2023 - Université",
+      icon: "🧬",
       color: "border-p5-accent",
       bgColor: "bg-p5-accent/10",
-      text: "Étudiant en 2e année d'informatique à Ynov Aix Campus, spécialisation développement logiciel et web.",
+      text: "4 années d'études en biochimie moléculaire à l'université, atteignant le niveau L3.",
+      year: "2019-2023"
     },
     {
-      title: "Passions & Loisirs",
-      icon: "🎮",
-      color: "border-accent",
-      bgColor: "bg-accent/10",
-      text: "Développement, jeux vidéo, apprentissage des langues, collection de cartes à jouer.",
-    },
-    {
-      title: "Expérience & Compétences",
-      icon: "🚀",
+      title: "2023-2028 - Formation Ynov",
+      icon: "💻",
       color: "border-highlight",
       bgColor: "bg-highlight/10",
-      text: "Stages HOMEPERF (ASP.NET, VB.NET), La Poste (travail d'équipe), Ynov (Full-stack, Unity, UE5, etc.).",
+      text: "Formation en informatique à Ynov Campus, spécialisation développement logiciel et web.",
+      year: "2023-2028"
     },
+    {
+      title: "Objectif - Expert Dev",
+      icon: "🎯",
+      color: "border-p5-red",
+      bgColor: "bg-p5-red/20",
+      text: "Devenir expert développeur full-stack logiciel, maîtrisant toutes les technologies modernes du développement web et applicatif.",
+      year: "Objectif",
+      isGoal: true
+    }
   ];
 
   // === PROJECTS DATA ===
@@ -140,31 +145,24 @@ export default function Landing() {
   const contactItems = [
     {
       name: "Email",
-      value: "enzo.dev.contact@gmail.com",
+      value: "enzo.carbo01@gmail.com",
       icon: "✉️",
       bgColor: "bg-p5-red/10",
-      link: "mailto:enzo.dev.contact@gmail.com"
+      link: "mailto:enzo.carbo01@gmail.com"
     },
     {
       name: "LinkedIn",
-      value: "Enzo Dev",
+      value: "Enzo Carbonara",
       icon: "💼",
       bgColor: "bg-p5-accent/10",
-      link: "https://www.linkedin.com/in/enzo-dev/"
+      link: "https://www.linkedin.com/in/enzo-carbonara-27b7a828b"
     },
     {
       name: "GitHub",
-      value: "EnzoDev",
+      value: "EnzoCarbo",
       icon: "👾",
       bgColor: "bg-highlight/10",
-      link: "https://github.com/EnzoDev"
-    },
-    {
-      name: "Twitter",
-      value: "@EnzoDev",
-      icon: "🐦",
-      bgColor: "bg-p5-red/10",
-      link: "https://twitter.com/EnzoDev"
+      link: "https://github.com/EnzoCarbo"
     },
   ];
 
@@ -254,7 +252,7 @@ export default function Landing() {
             </motion.div>
           </div>
 
-          {/* Transition Persona 5 avec motif de masque */}
+          {/* Transition douce entre About et Formation Pro */}
           <div className="w-40 h-screen flex-shrink-0 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-background to-p5-red"></div>
             <div className="absolute inset-0 opacity-30">
@@ -269,15 +267,38 @@ export default function Landing() {
             {/* Motif de fond */}
             <div className="absolute inset-0 opacity-10">
               <div className="w-full h-full" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.1'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 8L56 0h2L40 18v-2zm0 8L64 8h2L40 26v-2zm0 8L72 16h2L40 34v-2zm0 8L80 24h2L40 42v-2zm0 8L80 32h2L40 50v-2zm0 8L80 40h2L40 58v-2zm0 8L80 48h2L40 66v-2zm0 8L80 56h2L40 74v-2zm0 8L80 64h2L40 82v-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.1'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h1l-5 5V4zm0 4l8-8h1L40 8V6zm0 8l16-16h1L40 18v-2zm0 8l24-24h1L40 26v-2zm0 8l32-32h1L40 34v-2zm0 8l40-40h1L40 42v-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
               }} />
             </div>
 
             {/* Effet visuel Persona 5 pour About */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
+              {/* Balle qui traverse l'écran */}
+              <motion.div
+                className="absolute top-1/2 left-0 w-8 h-8 bg-black rounded-full shadow-2xl shadow-black/50 z-50"
+                style={{ transform: 'translateY(-50%)' }}
+                initial={{ x: -50 }}
+                whileInView={{ x: "calc(100vw - 100px)" }}
+                viewport={{ once: true }}
+                transition={{ duration: 3, ease: "easeInOut" }}
+              />
+              
+              {/* Impact de la balle à la fin */}
+              <motion.div
+                className="absolute top-1/2 right-20 w-16 h-16 bg-black rounded-full z-50"
+                style={{ transform: 'translateY(-50%)' }}
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: [0, 2, 1], opacity: [0, 1, 0.8] }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 3 }}
+              >
+                <div className="absolute inset-3 bg-red-600 rounded-full opacity-90"></div>
+                <div className="absolute inset-6 bg-black rounded-full opacity-70"></div>
+              </motion.div>
+              
               {/* Cadrillage Persona 5 */}
               <div 
-                className="absolute inset-0 opacity-10"
+                className="absolute inset-0 opacity-5"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.9'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20zm0-20h1l-1 1V0zm0 2l2-2h1l-3 3V2zm0 2l4-4h1L20 5V4zm0 4l8-8h1L20 9V8zm0 4l12-12h1L20 13v-1zm0 4l16-16h1L20 17v-1zm0 4l20-20h1L20 21v-1zm0 4l20-16h1L20 25v-1zm0 4l20-12h1L20 29v-1zm0 4l20-8h1L20 33v-1zm0 4l20-4h1L20 37v-1zm0 4l20 0h1L20 41v-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
                   backgroundSize: '40px 40px'
@@ -404,12 +425,85 @@ export default function Landing() {
             </div>
           </div>
 
+          {/* Section Formation Professionnelle */}
+          <section className="min-h-screen bg-white relative flex items-center justify-center p-8">
+            {/* Titre de la section */}
+            <motion.h2 
+              className="absolute top-8 left-8 text-6xl font-p5 font-bold text-p5-red tracking-wider z-10"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              FORMATION PRO
+            </motion.h2>
+
+            {/* Contenu de la section */}
+            <div className="w-full max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20">
+                {/* Stage HOMEPERF */}
+                <motion.div
+                  className="bg-background p-8 rounded-none shadow-2xl border-l-8 border-p5-red hover:border-p5-accent transition-all duration-300"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(255, 255, 255, 0.2)" }}
+                >
+                  <div className="text-4xl mb-4">🏢</div>
+                  <h3 className="text-2xl font-p5 font-bold text-white mb-3">HOMEPERF</h3>
+                  <p className="text-p5-accent font-p5 font-semibold mb-3">Stage Développement</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Développement d'applications avec ASP.NET et VB.NET. 
+                    Travail sur des projets concrets en entreprise.
+                  </p>
+                </motion.div>
+
+                {/* Stage La Poste */}
+                <motion.div
+                  className="bg-background p-8 rounded-none shadow-2xl border-l-8 border-p5-accent hover:border-highlight transition-all duration-300"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(255, 255, 255, 0.2)" }}
+                >
+                  <div className="text-4xl mb-4">📮</div>
+                  <h3 className="text-2xl font-p5 font-bold text-white mb-3">La Poste</h3>
+                  <p className="text-p5-accent font-p5 font-semibold mb-3">Stage Travail d'Équipe</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Développement des compétences en travail d'équipe et collaboration. 
+                    Intégration dans un environnement professionnel.
+                  </p>
+                </motion.div>
+
+                {/* Formation Ynov */}
+                <motion.div
+                  className="bg-background p-8 rounded-none shadow-2xl border-l-8 border-highlight hover:border-p5-red transition-all duration-300"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(255, 255, 255, 0.2)" }}
+                >
+                  <div className="text-4xl mb-4">🎓</div>
+                  <h3 className="text-2xl font-p5 font-bold text-white mb-3">Ynov Campus</h3>
+                  <p className="text-p5-accent font-p5 font-semibold mb-3">Formation Continue</p>
+                  <p className="text-gray-300 leading-relaxed">
+                    Formation en développement full-stack, Unity, Unreal Engine 5. 
+                    Projets pratiques et technologies modernes.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+          </section>
+
           {/* Transition inverse */}
           <div className="w-40 h-screen flex-shrink-0 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-l from-background to-p5-red"></div>
-            <div className="absolute inset-0 opacity-30">
+            <div className="absolute inset-0 bg-background"></div>
+            <div className="absolute inset-0 opacity-50">
               <div className="w-full h-full" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23E60012' fill-opacity='0.3'%3E%3Cpath d='M20 20c0-11.046 8.954-20 20-20v40c-11.046 0-20-8.954-20-20z'/%3E%3C/g%3E%3C/svg%3E")`,
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.6'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h1l-5 5V4zm0 4l8-8h1L40 8V6zm0 8l16-16h1L40 18v-2zm0 8l24-24h1L40 26v-2zm0 8l32-32h1L40 34v-2zm0 8l40-40h1L40 42v-2z'/%3E%3C/g%3E%3C/svg%3E")`,
               }} />
             </div>
           </div>
@@ -720,7 +814,7 @@ export default function Landing() {
 
               {/* Contact GitHub - Position 6h avec chevauchement subtil */}
               <motion.div
-                className="absolute left-1/3 bottom-12 transform -translate-x-1/2 w-68 bg-background p-6 rounded-none shadow-2xl border-l-8 border-white z-20"
+                className="absolute left-20 bottom-12 transform -translate-x-1/2 w-68 bg-background p-6 rounded-none shadow-2xl border-l-8 border-white z-20"
                 initial={{ opacity: 0, y: 50, scale: 0.8 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
@@ -736,34 +830,6 @@ export default function Landing() {
                 <p className="text-sm font-p5 font-semibold text-p5-accent tracking-wider uppercase mb-3">{contactItems[2].value}</p>
                 <motion.a
                   href={contactItems[2].link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-white text-p5-red font-p5 font-bold tracking-wider uppercase hover:bg-p5-accent hover:text-white transition-all duration-300 text-sm"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Voir le profil
-                </motion.a>
-              </motion.div>
-
-              {/* Contact Twitter - Position 9h avec chevauchement subtil */}
-              <motion.div
-                className="absolute left-16 top-1/2 transform -translate-y-1/2 w-68 bg-background p-6 rounded-none shadow-2xl border-l-8 border-white z-20"
-                initial={{ opacity: 0, x: -50, scale: 0.8 }}
-                whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                whileHover={{ scale: 1.05, zIndex: 40, boxShadow: "0 0 40px rgba(255, 255, 255, 0.4)" }}
-              >
-                <div className="text-3xl mb-3 bg-p5-red/10 w-12 h-12 rounded-full flex items-center justify-center">
-                  {contactItems[3].icon}
-                </div>
-                <h3 className="text-xl font-p5 font-bold text-white tracking-wider mb-2">
-                  {contactItems[3].name}
-                </h3>
-                <p className="text-sm font-p5 font-semibold text-p5-accent tracking-wider uppercase mb-3">{contactItems[3].value}</p>
-                <motion.a
-                  href={contactItems[3].link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-4 py-2 bg-white text-p5-red font-p5 font-bold tracking-wider uppercase hover:bg-p5-accent hover:text-white transition-all duration-300 text-sm"
