@@ -1,3 +1,133 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Styles Persona 5 personnalisés */
+@layer components {
+  .p5-glow {
+    box-shadow: 
+      0 0 10px #E60012,
+      0 0 20px #E60012,
+      0 0 30px #E60012;
+  }
+  
+  .p5-text-glow {
+    text-shadow: 
+      0 0 10px #E60012,
+      0 0 20px #E60012,
+      0 0 30px #E60012;
+  }
+  
+  .p5-border-glow {
+    border-color: #E60012;
+    box-shadow: 
+      inset 0 0 10px rgba(230, 0, 18, 0.3),
+      0 0 20px rgba(230, 0, 18, 0.2);
+  }
+  
+  .p5-card-hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .p5-card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+      0 20px 40px rgba(230, 0, 18, 0.3),
+      0 0 60px rgba(230, 0, 18, 0.1);
+  }
+  
+  .p5-mask {
+    background: radial-gradient(circle at center, #E60012 0%, transparent 70%);
+    animation: p5-mask-pulse 3s ease-in-out infinite;
+  }
+  
+  .p5-geometric-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E60012' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-16.569-13.431-30-30-30v60c16.569 0 30-13.431 30-30z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@keyframes p5-mask-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+/* Scrollbar Persona 5 */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E60012;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF2D95;
+}
+
+/* Sélection de texte Persona 5 */
+::selection {
+  background: #E60012;
+  color: #FFFFFF;
+}
+
+/* Focus Persona 5 */
+*:focus {
+  outline: 2px solid #E60012;
+  outline-offset: 2px;
+}
+
+/* Animation d'entrée pour les éléments */
+.p5-fade-in {
+  animation: p5-fade-in 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes p5-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Effet de particules flottantes */
+.p5-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.p5-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #E60012;
+  border-radius: 50%;
+  animation: p5-float 6s infinite linear;
+}
+
+@keyframes p5-float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
