@@ -277,7 +277,7 @@ export default function Landing() {
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
               {/* Cadrillage Persona 5 */}
               <div 
-                className="absolute inset-0 opacity-20"
+                className="absolute inset-0 opacity-10"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.8'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20zm0-20h1l-1 1V0zm0 2l2-2h1l-3 3V2zm0 2l4-4h1L20 5V4zm0 4l8-8h1L20 9V8zm0 4l12-12h1L20 13v-1zm0 4l16-16h1L20 17v-1zm0 4l20-20h1L20 21v-1zm0 4l20-16h1L20 25v-1zm0 4l20-12h1L20 29v-1zm0 4l20-8h1L20 33v-1zm0 4l20-4h1L20 37v-1zm0 4l20 0h1L20 41v-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
                   backgroundSize: '40px 40px'
