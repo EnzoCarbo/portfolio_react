@@ -273,66 +273,85 @@ export default function Landing() {
               }} />
             </div>
 
-            {/* Effets d'impact de balle */}
-            <div className="absolute inset-0 pointer-events-none">
-              {/* Impact 1 - Gros impact central */}
+            {/* Effet visuel Persona 5 pour About */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+              {/* Cadrillage Persona 5 */}
+              <div 
+                className="absolute inset-0 opacity-20"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.8'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20zm0-20h1l-1 1V0zm0 2l2-2h1l-3 3V2zm0 2l4-4h1L20 5V4zm0 4l8-8h1L20 9V8zm0 4l12-12h1L20 13v-1zm0 4l16-16h1L20 17v-1zm0 4l20-20h1L20 21v-1zm0 4l20-16h1L20 25v-1zm0 4l20-12h1L20 29v-1zm0 4l20-8h1L20 33v-1zm0 4l20-4h1L20 37v-1zm0 4l20 0h1L20 41v-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+                  backgroundSize: '40px 40px'
+                }}
+              />
+              
+              {/* Morgana - Personnage iconique de Persona 5 */}
               <motion.div
-                className="absolute left-1/4 top-1/3 w-32 h-32 bg-black rounded-full opacity-20"
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 0.2 }}
+                className="absolute bottom-8 right-8 w-32 h-32 opacity-30"
+                initial={{ scale: 0, rotate: -15 }}
+                whileInView={{ scale: 1, rotate: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.5 }}
+                transition={{ duration: 1.2, delay: 0.8 }}
               >
-                <div className="absolute inset-4 bg-p5-red rounded-full opacity-60"></div>
-                <div className="absolute inset-8 bg-black rounded-full opacity-40"></div>
+                <div className="w-full h-full bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-full shadow-2xl shadow-blue-500/30 flex items-center justify-center">
+                  <span className="text-6xl">🐱</span>
+                </div>
+                {/* Effet de lueur Persona 5 */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full animate-pulse"></div>
               </motion.div>
-
-              {/* Impact 2 - Impact moyen haut-gauche */}
+              
+              {/* Lignes géométriques animées */}
               <motion.div
-                className="absolute left-16 top-20 w-20 h-20 bg-black rounded-full opacity-15"
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 0.15 }}
+                className="absolute top-0 left-0 w-full h-full"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.8 }}
+                transition={{ duration: 1 }}
               >
-                <div className="absolute inset-3 bg-p5-red rounded-full opacity-50"></div>
-                <div className="absolute inset-6 bg-black rounded-full opacity-30"></div>
-              </motion.div>
-
-              {/* Impact 3 - Impact petit bas-droite */}
-              <motion.div
-                className="absolute right-24 bottom-32 w-16 h-16 bg-black rounded-full opacity-10"
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 0.1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-              >
-                <div className="absolute inset-2 bg-p5-red rounded-full opacity-40"></div>
-                <div className="absolute inset-4 bg-black rounded-full opacity-20"></div>
-              </motion.div>
-
-              {/* Impact 4 - Impact moyen centre-droite */}
-              <motion.div
-                className="absolute right-1/3 top-1/2 w-24 h-24 bg-black rounded-full opacity-12"
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 0.12 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.9, delay: 1.5 }}
-              >
-                <div className="absolute inset-3 bg-p5-red rounded-full opacity-45"></div>
-                <div className="absolute inset-6 bg-black rounded-full opacity-25"></div>
-              </motion.div>
-
-              {/* Impact 5 - Petit impact haut-centre */}
-              <motion.div
-                className="absolute left-1/2 top-16 w-12 h-12 bg-black rounded-full opacity-08"
-                initial={{ scale: 0, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 0.08 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 1.8 }}
-              >
-                <div className="absolute inset-2 bg-p5-red rounded-full opacity-35"></div>
-                <div className="absolute inset-4 bg-black rounded-full opacity-15"></div>
+                {/* Ligne diagonale principale */}
+                <motion.div
+                  className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-p5-accent via-white to-p5-accent"
+                  initial={{ scaleY: 0 }}
+                  whileInView={{ scaleY: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.5, delay: 0.5 }}
+                />
+                
+                {/* Ligne horizontale */}
+                <motion.div
+                  className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-p5-accent to-transparent"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, delay: 1 }}
+                />
+                
+                {/* Points lumineux */}
+                <motion.div
+                  className="absolute top-20 left-20 w-6 h-6 bg-p5-accent rounded-full shadow-lg shadow-p5-accent/50"
+                  animate={{ 
+                    scale: [1, 1.5, 1],
+                    opacity: [0.5, 1, 0.5]
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                
+                <motion.div
+                  className="absolute bottom-20 right-20 w-5 h-5 bg-white rounded-full shadow-lg shadow-white/50"
+                  animate={{ 
+                    scale: [1, 1.3, 1],
+                    opacity: [0.7, 1, 0.7]
+                  }}
+                  transition={{ duration: 1.8, repeat: Infinity, delay: 0.5 }}
+                />
+                
+                <motion.div
+                  className="absolute top-1/2 right-20 w-6 h-6 bg-p5-accent rounded-full shadow-lg shadow-p5-accent/50"
+                  animate={{ 
+                    scale: [1, 1.4, 1],
+                    opacity: [0.5, 1, 0.5]
+                  }}
+                  transition={{ duration: 2.2, repeat: Infinity, delay: 1 }}
+                />
               </motion.div>
             </div>
 
@@ -614,7 +633,7 @@ export default function Landing() {
 
             {/* Titre de section Contact */}
             <motion.div
-              className="absolute top-12 left-1/2 transform -translate-x-1/2 text-center z-10"
+              className="absolute top-12 left-12 text-left z-10"
               initial={{ opacity: 0, y: -50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -623,7 +642,7 @@ export default function Landing() {
               <h2 className="text-6xl font-p5 font-black text-white tracking-wider mb-4 p5-text-glow">
                 CONTACT
               </h2>
-              <div className="w-32 h-1 bg-white mx-auto"></div>
+              <div className="w-32 h-1 bg-white"></div>
             </motion.div>
 
             {/* Disposition en cercle des contacts */}
@@ -636,12 +655,12 @@ export default function Landing() {
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-                <div className="text-6xl mb-4">🎯</div>
+                <div className="text-6xl mb-4">🚀</div>
                 <h3 className="text-2xl font-p5 font-bold text-white tracking-wider mb-4">
-                  Prenons contact !
+                  Prêt à collaborer !
                 </h3>
                 <p className="text-lg font-p5 text-p5-accent tracking-wider">
-                  "Changez le monde avec votre code"
+                  "Ensemble, créons l'avenir du web"
                 </p>
               </motion.div>
 
@@ -701,7 +720,7 @@ export default function Landing() {
 
               {/* Contact GitHub - Position 6h avec chevauchement subtil */}
               <motion.div
-                className="absolute left-1/2 bottom-12 transform -translate-x-1/2 w-68 bg-background p-6 rounded-none shadow-2xl border-l-8 border-white z-20"
+                className="absolute left-1/3 bottom-12 transform -translate-x-1/2 w-68 bg-background p-6 rounded-none shadow-2xl border-l-8 border-white z-20"
                 initial={{ opacity: 0, y: 50, scale: 0.8 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
