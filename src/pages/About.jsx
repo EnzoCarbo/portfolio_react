@@ -10,16 +10,6 @@ export default function About() {
     }),
   };
 
-  const lineVariants = {
-    hidden: { opacity: 0, scaleX: 0 },
-    visible: {
-      opacity: 1,
-      scaleX: 1,
-      transition: { duration: 1, ease: "easeOut" },
-    },
-    exit: { opacity: 0, scaleX: 0 },
-  };
-
   const items = [
     {
       title: "Parcours académique",
@@ -49,46 +39,29 @@ export default function About() {
 
   return (
     <div className="w-[200vw] min-h-screen bg-primary text-text flex justify-center items-center p-12">
-      <div className="relative w-full">
-        
-        {/* Ligne horizontale animée en pointillés */}
+      <div className="relative w-full flex items-center justify-center">
+
+        {/* Ligne horizontale ON/OFF */}
         <motion.div
-          className="absolute top-1/2 left-0 h-1 w-full -translate-y-1/2 origin-left"
+          className="absolute top-1/2 left-0 h-1 w-full -translate-y-1/2"
           style={{
             backgroundImage:
               "repeating-linear-gradient(to right, black 0 10px, transparent 10px 20px)",
           }}
-          variants={lineVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
           viewport={{ once: false, amount: 0.2 }}
         />
 
-        {/* Points de timeline */}
-        <div className="absolute top-1/2 left-0 w-full flex justify-between -translate-y-1/2 px-16">
-          {items.map((_, i) => (
-          <motion.div
-  className="absolute top-1/2 left-0 h-1 w-full -translate-y-1/2"
-  style={{
-    backgroundImage:
-      "repeating-linear-gradient(to right, black 0 10px, transparent 10px 20px)",
-  }}
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  exit={{ opacity: 0 }}
-  viewport={{ once: false, amount: 0.2 }}
-/>
-
-          ))}
-        </div>
 
         {/* Cartes */}
-        <div className="grid grid-cols-4 w-full px-16">
+        <div className="grid grid-cols-4 gap-8 w-[200vw] px-16 flex items-center justify-center">
           {items.map((item, i) => (
             <motion.div
               key={i}
               className={`relative w-full max-w-[400px] bg-surface p-8 rounded-2xl shadow-lg border-t-8 ${item.border} ${
-                i % 2 === 0 ? "mb-32" : "mt-32"
+                i % 2 === 0 ? "mb-64" : "mt-64"
               }`}
               variants={cardVariants}
               initial="hidden"
@@ -101,6 +74,7 @@ export default function About() {
             </motion.div>
           ))}
         </div>
+        
       </div>
     </div>
   );
